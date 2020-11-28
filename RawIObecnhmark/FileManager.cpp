@@ -9,9 +9,9 @@
 #include <random>
 
 int FileManager::random(int min, int max) {
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> distrib(min, max);
+	static std::random_device rd;
+	static std::mt19937 gen(rd());
+	static std::uniform_int_distribution<> distrib(min, max);
 	return distrib(gen);
 }
 
@@ -21,7 +21,7 @@ void FileManager::turnOffCache() {
 }
 
 void FileManager::readInRandomPlace() {
-	// Для файла 32 гб и блока 4096 байт
+	// Для файла 64 гб и блока 4096 байт
 	std::size_t offset = random(0, 16677216);
 	offset *= blockSize;
 

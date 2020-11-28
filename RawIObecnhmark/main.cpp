@@ -15,13 +15,17 @@ std::optional<FileManager> managerWithoutCache;
 const int blockSize = 4096;
 
 static void BM_openWithCache(benchmark::State& state) {
-	for (auto _ : state)
-		manager->readInRandomPlace();
+	for (auto _ : state) {
+		for (int i = 0; i < 1024; i++)
+			manager->readInRandomPlace();
+	}
 }
 
 static void BM_openWithoutCache(benchmark::State& state) {
-	for (auto _ : state)
-		manager->readInRandomPlace();
+	for (auto _ : state) {
+		for (int i = 0; i < 1024; i++)
+			manager->readInRandomPlace();
+	}
 }
 
 int main(int argc, const char * argv[]) {

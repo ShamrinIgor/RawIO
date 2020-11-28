@@ -52,6 +52,10 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
+            argument = "/Volumes/USB32gb/bigFile"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "/Users/igor/Projects/Course4/RawIObecnhmark/bigFile"
             isEnabled = "YES">
          </CommandLineArgument>
