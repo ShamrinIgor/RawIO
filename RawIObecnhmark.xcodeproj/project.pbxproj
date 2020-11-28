@@ -263,6 +263,7 @@
 		78F5A5EA256C2D9400FD8B5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = RawIObecnhmark/RawIObecnhmark.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHFX673HZH;
@@ -283,6 +284,7 @@
 		78F5A5EB256C2D9400FD8B5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = RawIObecnhmark/RawIObecnhmark.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHFX673HZH;

@@ -18,7 +18,7 @@
 class FileManager {
 	int fd;
 	std::size_t blockSize;
-	std::vector<char, boost::alignment::aligned_allocator<char, 512>> vector;
+	std::vector<char, boost::alignment::aligned_allocator<char, 4096>> vector;
 
 	int random(int min, int max);
 

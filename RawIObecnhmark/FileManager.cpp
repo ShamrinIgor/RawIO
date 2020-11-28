@@ -24,7 +24,7 @@ void FileManager::readInRandomPlace() {
 	// Для файла 32 гб и блока 4096 байт
 	std::size_t offset = random(0, 16677216);
 	offset *= blockSize;
-	
+
 	if (pread(fd, &vector[0], blockSize, offset) != vector.size())
 		throw std::system_error(errno, std::system_category(), "read failed");
 }

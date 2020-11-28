@@ -8,24 +8,27 @@
 #include <iostream>
 #include <benchmark/benchmark.h>
 #include "FileManager.hpp"
+#include <optional>
 
-std::string path = "/Users/igor/Projects/Course4/RawIObecnhmark/bigFile";
-FileManager manager = FileManager(path, 4096);
-FileManager managerWithoutCache = FileManager(path, 4096);
+std::optional<FileManager> manager;
+std::optional<FileManager> managerWithoutCache;
+const int blockSize = 4096;
 
 static void BM_openWithCache(benchmark::State& state) {
 	for (auto _ : state)
-		manager.readInRandomPlace();
+		manager->readInRandomPlace();
 }
 
 static void BM_openWithoutCache(benchmark::State& state) {
-	manager.turnOffCache();
 	for (auto _ : state)
-		manager.readInRandomPlace();
+		manager->readInRandomPlace();
 }
 
 int main(int argc, const char * argv[]) {
-	managerWithoutCache.turnOffCache();
+	const char *path = argv[1];
+	manager.emplace(path, blockSize);
+	managerWithoutCache.emplace(path, blockSize);
+	managerWithoutCache->turnOffCache();
 	BENCHMARK(BM_openWithCache);
 	BENCHMARK(BM_openWithoutCache);
 	benchmark::RunSpecifiedBenchmarks();
