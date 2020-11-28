@@ -16,14 +16,14 @@ const int blockSize = 4096;
 
 static void BM_openWithCache(benchmark::State& state) {
 	for (auto _ : state) {
-		for (int i = 0; i < 1024; i++)
+		for (uint64_t i = 0; i < 8388608; i++)
 			manager->readInRandomPlace();
 	}
 }
 
 static void BM_openWithoutCache(benchmark::State& state) {
 	for (auto _ : state) {
-		for (int i = 0; i < 1024; i++)
+		for (uint64_t i = 0; i < 8388608; i++)
 			manager->readInRandomPlace();
 	}
 }
