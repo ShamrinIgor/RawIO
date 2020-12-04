@@ -4,7 +4,6 @@
 //
 //  Created by Игорь Шамрин on 23.11.2020.
 //
-
 #ifndef Benchmark_h
 #define Benchmark_h
 
@@ -15,15 +14,19 @@
 #include <cerrno>
 #include <system_error>
 
+/// Класс отвечающий за работу с большим файлом
 class FileManager {
-	int fd;
-	std::size_t blockSize;
-	std::vector<char, boost::alignment::aligned_allocator<char, 4096>> vector;
+	int fd; /**< Файловый дискрпитор */
+	std::size_t blockSize; /**< Размер блока */
+	std::vector<char, boost::alignment::aligned_allocator<char, 4096>> vector; /**< Вектор с выравниванием 4096 байт */
 
-	int random(int min, int max);
+	/// Генератор случайно числа в диапозоне
+	/// @param min начало диапозона
+	/// @param max конец даипозона
+	int random(int min, int max) const;
 
 public:
-	/// Конструктор Benchmark
+	/// Конструктор FileManaged
 	/// @param path  путь к файлу
 	/// @param blockSize размер блока
 	FileManager(std::string_view path, std::size_t blockSize):
@@ -32,6 +35,9 @@ public:
 			throw std::system_error(errno, std::system_category(), "open failed");
 	}
 
+	FileManager(const FileManager& manager)=delete;
+
+	/// Деструктор FileManaged
 	~FileManager() {
 		close(fd);
 	}
@@ -39,7 +45,7 @@ public:
 	/// Прочитать файл в случайном месте
 	void readInRandomPlace();
 	/// Функция отключения кэша файловой системы
-	void turnOffCache();
+	void turnOffCache() const;
 };
 
 

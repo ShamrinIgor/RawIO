@@ -59,6 +59,14 @@
             argument = "/Users/igor/Projects/Course4/RawIObecnhmark/bigFile"
             isEnabled = "YES">
          </CommandLineArgument>
+         <CommandLineArgument
+            argument = "4096"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "8388608"
+            isEnabled = "YES">
+         </CommandLineArgument>
       </CommandLineArguments>
    </LaunchAction>
    <ProfileAction

@@ -8,14 +8,14 @@
 #include "FileManager.hpp"
 #include <random>
 
-int FileManager::random(int min, int max) {
+int FileManager::random(int min, int max) const {
 	static std::random_device rd;
 	static std::mt19937 gen(rd());
 	static std::uniform_int_distribution<> distrib(min, max);
 	return distrib(gen);
 }
 
-void FileManager::turnOffCache() {
+void FileManager::turnOffCache() const {
 	if (fcntl(fd, F_NOCACHE) == -1)
 		throw std::system_error(errno, std::system_category(), "cache disabling failed");
 }

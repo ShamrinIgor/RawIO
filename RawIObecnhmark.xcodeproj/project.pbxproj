@@ -30,7 +30,6 @@
 		78F5A5E5256C2D9400FD8B5D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		78F5A5EE256C2E2500FD8B5D /* libbenchmark_main.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbenchmark_main.a; path = "../../../../../usr/local/Cellar/google-benchmark/1.5.2/lib/libbenchmark_main.a"; sourceTree = "<group>"; };
 		78F5A5EF256C2E2500FD8B5D /* libbenchmark.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libbenchmark.a; path = "../../../../../usr/local/Cellar/google-benchmark/1.5.2/lib/libbenchmark.a"; sourceTree = "<group>"; };
-		78F5A5F3256C2EBF00FD8B5D /* RawIObecnhmark.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RawIObecnhmark.entitlements; sourceTree = "<group>"; };
 		78F5A5F9256C34FA00FD8B5D /* FileManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FileManager.cpp; sourceTree = "<group>"; };
 		78F5A5FA256C34FA00FD8B5D /* FileManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FileManager.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,7 +67,6 @@
 		78F5A5E4256C2D9400FD8B5D /* RawIObecnhmark */ = {
 			isa = PBXGroup;
 			children = (
-				78F5A5F3256C2EBF00FD8B5D /* RawIObecnhmark.entitlements */,
 				78F5A5E5256C2D9400FD8B5D /* main.cpp */,
 				78F5A5F9256C34FA00FD8B5D /* FileManager.cpp */,
 				78F5A5FA256C34FA00FD8B5D /* FileManager.hpp */,
@@ -265,6 +263,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = RawIObecnhmark/RawIObecnhmark.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHFX673HZH;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -286,6 +285,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CODE_SIGN_ENTITLEMENTS = RawIObecnhmark/RawIObecnhmark.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RHFX673HZH;
 				ENABLE_HARDENED_RUNTIME = YES;
